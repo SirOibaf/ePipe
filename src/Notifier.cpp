@@ -38,7 +38,6 @@ void Notifier::start() {
     mSDSTailer->start();
     mSkvTailer->start();
     mSklTailer->start();
-    mIdxsTailer->start();
     mTblsTailer->start();
     mPartTailer->start();
 
@@ -47,7 +46,6 @@ void Notifier::start() {
     mSDSTailer->waitToFinish();
     mSkvTailer->waitToFinish();
     mSklTailer->waitToFinish();
-    mIdxsTailer->waitToFinish();
     mTblsTailer->waitToFinish();
     mPartTailer->waitToFinish();
 }
@@ -62,7 +60,6 @@ void Notifier::setup() {
     mSDSTailer = new SDSTailer(sds_tailer_connection, mPollMaxTimeToWait);
     mSkvTailer = new SkewedValuesTailer(skv_tailer_connection, mPollMaxTimeToWait);
     mSklTailer = new SkewedLocTailer(skl_tailer_connection, mPollMaxTimeToWait);
-    mIdxsTailer = new IDXSTailer(idxs_tailer_connection, mPollMaxTimeToWait);
     mTblsTailer = new TBLSTailer(tbls_tailer_connection, mPollMaxTimeToWait);
     mPartTailer = new PARTTailer(part_tailer_connection, mPollMaxTimeToWait);
 }
@@ -103,7 +100,6 @@ Notifier::~Notifier() {
     delete mSDSTailer;
     delete mSkvTailer;
     delete mSklTailer;
-    delete mIdxsTailer;
     delete mTblsTailer;
     delete mPartTailer;
     ndb_end(2);

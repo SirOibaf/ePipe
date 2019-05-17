@@ -28,7 +28,6 @@
 #include "SDSTailer.h"
 #include "SkewedLocTailer.h"
 #include "SkewedValuesTailer.h"
-#include "IDXSTailer.h"
 #include "TBLSTailer.h"
 #include "PARTTailer.h"
 
@@ -49,7 +48,6 @@ private:
     SDSTailer* mSDSTailer;
     SkewedLocTailer* mSklTailer;
     SkewedValuesTailer* mSkvTailer;
-    IDXSTailer* mIdxsTailer;
     TBLSTailer* mTblsTailer;
     PARTTailer* mPartTailer;
 
